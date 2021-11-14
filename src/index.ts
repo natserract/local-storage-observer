@@ -1,4 +1,12 @@
-import { BehaviorSubject, EMPTY, isEmpty, Observable, tap } from 'rxjs'
+import {
+  BehaviorSubject,
+  EMPTY,
+  isEmpty,
+  Observable,
+  of,
+  tap,
+  throwError,
+} from 'rxjs'
 import { decryptData, encryptData } from './utils/encrypt'
 import { deserialize, serialize } from './utils/serialize'
 
@@ -134,6 +142,58 @@ class LocalStorageObserver {
       }
     } catch (error) {
       return this.throwError(key, error)
+    }
+  }
+
+  /**
+   * Remove item from localstorage
+   * Will return success / error messages
+   *
+   * Example:
+   * ```ts
+   * localStorageObserver.remove$(key).subscribe((message) => {
+   *    console.log('Message: ', message)
+   * })
+   * ```
+   *
+   * @returns String
+   *
+   */
+  remove$(key: string): Observable<string> {
+    try {
+      if (this._cache[key]) {
+        localStorage.removeItem(key)
+
+        for (const [cacheKey] of Object.entries(this._cache)) {
+          if (key === cacheKey) {
+            delete this._cache[key]
+          }
+        }
+        return of('Key is succesfully removed')
+      }
+
+      return throwError(() => 'Please set your key first, using set$')
+    } catch (error) {
+      return throwError(() => `Error remove$: ${error}`)
+    }
+  }
+
+  /**
+   * Clear all items
+   *
+   * @returns String
+   */
+  clear$(): Observable<string> {
+    try {
+      localStorage.clear()
+
+      for (const [cacheKey] of Object.entries(this._cache)) {
+        delete this._cache[cacheKey]
+      }
+
+      return of('Key is succesfully cleared')
+    } catch (error) {
+      return throwError(() => `Error clear$: ${error}`)
     }
   }
 

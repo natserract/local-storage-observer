@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import localStorageObserver from './package/dist/'
+import localStorageObserver from './package/dist'
 
 import './App.css'
 
@@ -48,10 +48,25 @@ function App() {
     ])
   }
 
+  const handleDelete = () => {
+    localStorageObserver.remove$(key).subscribe({
+      next: (message) => console.log('Message: ', message),
+      error: (error) => console.error('Error: ', error),
+    })
+  }
+
+  const handleClear = () => {
+    localStorageObserver.clear$().subscribe((message) => {
+      console.log('Message: ', message)
+    })
+  }
+
   return (
     <div className="App">
       <h2>Hello</h2>
       <button onClick={handleClick}>Change value</button>
+      <button onClick={handleDelete}>Delete value</button>
+      <button onClick={handleClear}>Clear values</button>
     </div>
   )
 }
