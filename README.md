@@ -90,7 +90,7 @@ localStorageObserver.clear$().subscribe((message) => {
 })
 ```
 
-## Unsubsribe
+## Unsubscribe
 
 Cleanup a subscription
 
