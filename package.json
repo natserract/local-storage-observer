@@ -1,7 +1,7 @@
 {
-  "name": "localstorage-observer",
+  "name": "local-storage-observer",
   "version": "1.0.0",
-  "description": "Offline store using localstorage but in observer",
+  "description": "💾  Offline storage using localstorage running in Observer ",
   "keywords": [
     "localstorage",
     "observer"
@@ -13,7 +13,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/natserract/localstorage-observer"
+    "url": "https://github.com/natserract/local-storage-observer"
   },
   "author": "natserract <benjaminstwo@gmail.com>",
   "license": "MIT",

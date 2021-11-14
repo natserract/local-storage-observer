@@ -15,15 +15,15 @@ window.addEventListener('storage', () => {})
 To use localStorageObserver, just drop a single line into your app:
 
 ```ts
-import localStorageObserver from 'localstorage-observer'
+import localStorageObserver from 'local-storage-observer'
 ```
 
-See more [real example](https://github.com/natserract/localstorage-observer/tree/master/examples).
+See more [real example](https://github.com/natserract/local-storage-observer/tree/master/examples).
 
-Download the [latest localStorageObserver from GitHub](https://github.com/natserract/localstorage-observer), or install with npm:
+Download the [latest localStorageObserver from GitHub](https://github.com/natserract/local-storage-observer), or install with npm:
 
 ```terminal
-npm install localstorage-observer
+npm install local-storage-observer
 ```
 
 ## Configuration
@@ -34,7 +34,7 @@ Example:
 
 ```ts
 localStorageObserver.config({
-  storeName: 'localstorage_observer',
+  storeName: 'local_storage_observer',
 })
 ```
 
@@ -106,4 +106,4 @@ useEffect(() => {
 
 ## License
 
-This program is free software; it is distributed under an [MIT License](https://github.com/natserract/localstorage-observer/blob/master/LICENSE.md).
+This program is free software; it is distributed under an [MIT License](https://github.com/natserract/local-storage-observer/blob/master/LICENSE.md).
