@@ -28,7 +28,7 @@ npm install localstorage-observer
 
 ## Configuration
 
-You san several configuration with the `config()` method. Avalaible options `description`, `storeName`, and `version` (use for future, currently isn't some affect in your app).
+You can set several configuration with the `config()` method. Avalaible options `description`, `storeName`, and `version` (use for future, currently isn't some affect in your app).
 
 Example:
 
@@ -88,6 +88,20 @@ Removes the value of a key from the local storage.
 localStorageObserver.clear$().subscribe((message) => {
   console.log('Message: ', message)
 })
+```
+
+## Unsubsribe
+
+Cleanup a subscription
+
+```tsx
+useEffect(() => {
+  ...
+
+  return () => {
+    localStorageObserver.destroySubscription$()
+  }
+}, [])
 ```
 
 ## License
