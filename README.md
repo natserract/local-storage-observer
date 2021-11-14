@@ -1,6 +1,6 @@
 # LocalStorage Observer
 
-Called **localStorageObserver** this is a simple storage library for JavaScript, get inspire from **localStorageObserver** but running as **Observer**. This library support TypeScript, and EasyTo-Use.
+Called **localStorageObserver** this is a simple storage library for JavaScript, get inspire from **localForage** but running as **Observer**. This library support TypeScript, and EasyTo-Use.
 
 Problems why created this library:
 
@@ -68,3 +68,28 @@ You can store the following types of JavaScript objects:
 - `String`
 - `Number`
 - `Object`
+
+## Remove Item
+
+Removes the value of a key from the local storage.
+
+```ts
+localStorageObserver.remove$(key).subscribe({
+  next: (message) => console.log('Message: ', message),
+  error: (error) => console.error('Error: ', error),
+})
+```
+
+## Clear Item
+
+Removes the value of a key from the local storage.
+
+```ts
+localStorageObserver.clear$().subscribe((message) => {
+  console.log('Message: ', message)
+})
+```
+
+## License
+
+This program is free software; it is distributed under an [MIT License](https://github.com/natserract/localstorage-observer/blob/master/LICENSE.md).
