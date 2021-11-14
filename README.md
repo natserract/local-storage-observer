@@ -18,7 +18,7 @@ To use localStorageObserver, just drop a single line into your app:
 import localStorageObserver from 'localstorage-observer'
 ```
 
-See more [real example]().
+See more [real example](https://github.com/natserract/localstorage-observer/tree/master/examples).
 
 Download the [latest localStorageObserver from GitHub](https://github.com/natserract/localstorage-observer), or install with npm:
 

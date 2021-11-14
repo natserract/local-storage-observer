@@ -1,6 +1,6 @@
 {
-  "name": "@localstorage-observer/localstorage-observer",
-  "version": "0.0.0",
+  "name": "localstorage-observer",
+  "version": "1.0.0",
   "description": "Offline store using localstorage but in observer",
   "keywords": [
     "localstorage",
