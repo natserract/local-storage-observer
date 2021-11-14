@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import localStorageObserver from './package/dist'
+import localStorageObserver from 'local-storage-observer'
 
 import './App.css'
 
