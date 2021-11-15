@@ -23,7 +23,7 @@ function App() {
 
     // Get and listen any change of storage value
     // Value will be show after 5000ms
-    localStorageObserver.get$('tokenss').subscribe((next: any) => {
+    localStorageObserver.get$(key).subscribe((next: any) => {
       console.log('Result', JSON.parse(next))
     })
 
