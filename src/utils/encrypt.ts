@@ -6,7 +6,7 @@ export const encryptData = (data: string | null | any) => {
   try {
     return CryptoJS.AES.encrypt(serialize(data), SECRET_KEY).toString()
   } catch (error) {
-    return undefined
+    throw new Error('SECRET_KEY is undefine!')
   }
 }
 
@@ -20,6 +20,6 @@ export const decryptData = (data: string | null | any) => {
     }
     return data
   } catch (error) {
-    return undefined
+    throw new Error('SECRET_KEY is undefine!')
   }
 }

@@ -204,11 +204,11 @@ class LocalStorageObserver {
    * Example:
    * ```ts
    * return () => {
-   *    localStorageObserver.destroySubscription$()
+   *    localStorageObserver.destroySubscription()
    * }
    * ```
    */
-  destroySubscription$() {
+  destroySubscription() {
     for (const [key] of Object.entries(this._cache)) {
       this._cache[key].next(EMPTY)
       this._cache[key].complete()

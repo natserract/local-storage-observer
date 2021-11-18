@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import localStorageObserver from 'local-storage-observer'
+import localStorageObserver from './package/'
 
 import './App.css'
 
@@ -29,7 +29,7 @@ function App() {
 
     // Cleanup your subscriptions
     return () => {
-      localStorageObserver.destroySubscription$()
+      localStorageObserver.destroySubscription()
     }
   }, [])
 
