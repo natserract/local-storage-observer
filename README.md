@@ -99,7 +99,7 @@ useEffect(() => {
   ...
 
   return () => {
-    localStorageObserver.destroySubscription$()
+    localStorageObserver.destroySubscription()
   }
 }, [])
 ```
